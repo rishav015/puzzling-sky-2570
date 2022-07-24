@@ -58,7 +58,7 @@ AInput.addEventListener("click",function onClick(event){
 
 let form = document.querySelector("form");
 
-let signupArr  = JSON.parse(localStorage.getItem("btn1")) || [];
+let signupArr  = JSON.parse(localStorage.getItem("btn")) || [];
 // let loginArr  = JSON.parse(localStorage.getItem("btn")) ||[];
 
 
@@ -82,7 +82,7 @@ let isLogin = false;
     signupArr.forEach(function(ele){
       isLogin = true;
       if(ele.email===obj.email && ele.password == obj.password){
-        localStorage.setItem("btn1",JSON.stringify(ele));
+        localStorage.setItem("btn",JSON.stringify(ele));
         window.location.href="https://toggl.com/track/";
       }
     })
