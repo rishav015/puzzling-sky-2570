@@ -21,35 +21,23 @@
 //   });
 const inp = document.getElementById('email');
 const AInput = document.getElementById("password");
-let count = 0;
 inp.addEventListener('click', function onClick(event) {
     event.preventDefault();
   const input = document.getElementById('email');
 
-  count++;
-  if(count%2===0){
-    input.style.backgroundColor = 'rgb(44, 19, 56)';
-    input.style.color = "white"
-  }
-  else{
+  
     input.style.backgroundColor = "rgb(252, 229, 216)";
     input.style.color = "black"
 
-  }
 });
 
 AInput.addEventListener("click",function onClick(event){
     event.preventDefault();
   const AInput = document.getElementById("password");
-  count++;
-  if(count%2===0){
-    AInput.style.backgroundColor = 'rgb(44, 19, 56)';
-    AInput.style.color = "white"
-  }
-  else{
+   
     AInput.style.backgroundColor = 'rgb(252, 229, 216)';
     AInput.style.color = "black"
-  }
+
 
 });
 
@@ -78,16 +66,18 @@ let signupArr  = JSON.parse(localStorage.getItem("btn")) || [];
       email:form.email.value,
       password:form.password.value,
     }
-let isLogin = false;
     signupArr.forEach(function(ele){
-      isLogin = true;
+      
       if(ele.email===obj.email && ele.password == obj.password){
-        localStorage.setItem("btn",JSON.stringify(ele));
+        localStorage.setItem("btn1",JSON.stringify(ele));
+        alert("You have Successfully Logged in");
         window.location.href="https://toggl.com/track/";
       }
+      else{
+        window.alert("invalid email or password");
+      }
     })
-    if(isLogin===false){
-      alert("email and password is invalid");
-    }
+    
+    
   });
 
